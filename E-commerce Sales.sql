@@ -9,7 +9,7 @@ GROUP BY Category, "Sub-Category"
 ORDER BY Total_Revenue DESC
 LIMIT 5;
 
---Percentage of Orders with Delayed Delivery--
+--Popularity & Scale of Shipping Modes--
 SELECT 
     "Ship Mode",
     COUNT(DISTINCT "Order ID") AS Total_Orders,
@@ -18,7 +18,7 @@ FROM train
 GROUP BY "Ship Mode"
 ORDER BY Total_Orders DESC;
 
---Customer Loyalty Analysis--
+--High-Value Loyal Client Identification--
 WITH CustomerStats AS (
     SELECT 
         "Customer ID",
@@ -37,7 +37,7 @@ WHERE Total_Purchases >= 10 --loyal clients
 ORDER BY Total_Spent DESC
 LIMIT 10;
 
---Monthly Sales Dynamics--
+--Regional Sales Performance Breakdown--
 WITH RegionSales AS (
     SELECT 
         Region,
